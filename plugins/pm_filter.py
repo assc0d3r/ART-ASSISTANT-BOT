@@ -725,12 +725,12 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
+            await asyncio.sleep(300)
             await fek.delete()
             await message.delete()
     else:
         fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(600)
+        await asyncio.sleep(300)
         await fuk.delete()
         await message.delete()
     if spoll:
