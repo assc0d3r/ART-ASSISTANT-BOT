@@ -41,7 +41,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("Not For You! Search Own!", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -286,7 +286,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode="md"
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('Join @assimilat0r')
     elif query.data == "backcb":
         await query.answer()
 
@@ -297,7 +297,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('Join @assimilat0r')
         buttons = []
         for groupid in groupids:
             try:
@@ -407,7 +407,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
             InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
+            InlineKeyboardButton('🤖 Channel', url='https://t.me/assimilat0r')
         ], [
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
@@ -418,7 +418,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-        await query.answer('Piracy Is Crime')
+        await query.answer('Join @assimilat0r')
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -438,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
+            InlineKeyboardButton('🤖 Channel', url='https://t.me/assimilat0r'),
             InlineKeyboardButton('♥️ Source', callback_data='source')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
@@ -712,7 +712,7 @@ async def auto_filter(client, msg, spoll=False):
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
+            await asyncio.sleep(300)
             await hehe.delete()
             await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -775,7 +775,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        k = await msg.reply("I couldn't find anything related to that. Check your spelling Raise request in format <b> #moviename </b>")
         await asyncio.sleep(8)
         await k.delete()
         return
