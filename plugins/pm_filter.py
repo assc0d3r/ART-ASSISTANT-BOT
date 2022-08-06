@@ -708,55 +708,32 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
    else:
-        cap = f"<b>Hey {message.from_user.mention}, Here is What I Found In My Database For Your Query {search}.</b>"
-    if imdb and imdb.get('poster'):
-        try:
-
+        cap = f"<b>Hey {message.from_user.mention}, Here is What I Found In My Database For Your Query {search}.</b>"
+    if imdb and imdb.get('poster'):
+        try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-
-            await asyncio.sleep(10)
-
+            await asyncio.sleep(600)
+            await hehe.delete()
             await message.delete()
-
-            await hehe.delete()            
-
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-
             pic = imdb.get('poster')
-
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-
-            await asyncio.sleep(10)
-
+            await asyncio.sleep(600)
+            await hmm.delete()
             await message.delete()
-
-            await hmm.delete()          
-
         except Exception as e:
-
             logger.exception(e)
-
-            fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-
-            await asyncio.sleep(10)
-
+            fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
+            await fek.delete()
             await message.delete()
-
-            await fek.delete()           
-
     else:
-
-        fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-
-        await asyncio.sleep(10)
-
-        await message.delete()
-
+        fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(600)
         await fuk.delete()
-
-
+        await message.delete()
+   
 async def advantage_spell_chok(msg):
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
