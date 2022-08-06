@@ -714,7 +714,7 @@ async def auto_filter(client, msg, spoll=False):
 
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
 
             await message.delete()
 
@@ -728,7 +728,7 @@ async def auto_filter(client, msg, spoll=False):
 
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
 
             await message.delete()
 
@@ -740,7 +740,7 @@ async def auto_filter(client, msg, spoll=False):
 
             fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(10)
+            await asyncio.sleep(300)
 
             await message.delete()
 
@@ -750,7 +750,7 @@ async def auto_filter(client, msg, spoll=False):
 
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
 
-        await asyncio.sleep(10)
+        await asyncio.sleep(300)
 
         await message.delete()
 
