@@ -1,5 +1,5 @@
 services:
- EvaMaria:
+ python:3.8-slim-buster:
     public: true
     build: .
     resources:
