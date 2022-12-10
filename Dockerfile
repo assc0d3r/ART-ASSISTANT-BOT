@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM missemily22/multifbot:latest
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
