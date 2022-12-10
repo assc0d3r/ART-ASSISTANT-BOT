@@ -1,11 +1,1 @@
-services:
- python:3.8-slim-buster:
-    public: true
-    build: .
-    resources:
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-      limits:
-        cpu: 1000m
-        memory: 2000Mi
+art/art
