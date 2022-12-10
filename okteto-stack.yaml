@@ -1,1 +1,2 @@
-dockerfile:
+build:
+dockerfile: Dockerfile
