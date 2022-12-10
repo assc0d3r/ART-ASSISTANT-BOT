@@ -1,16 +1,5 @@
 FROM missemily22/multifbot:latest
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+pip install --root-user-action=ignore 
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
