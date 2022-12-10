@@ -1,17 +1,17 @@
 FROM missemily22/multifbot:latest
-RUN pip install --upgrade pip
+WORKDIR /app
 
-RUN adduser -D myuser
-USER myuser
-WORKDIR /home/myuser
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-COPY --chown=myuser:myuser requirements.txt requirements.txt
-RUN pip install --user -r requirements.txt
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc
 
-ENV PATH="/home/myuser/.local/bin:${PATH}"
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-COPY --chown=myuser:myuser . .
-
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 RUN apt update && apt upgrade -y
 RUN apt install git -y
 COPY requirements.txt /requirements.txt
