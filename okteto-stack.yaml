@@ -1,5 +1,5 @@
 services:
-  Art Assistant Bot:
+  art_assistant_bot:
     public: true
     build: .
     resources:
