@@ -1,8 +1,5 @@
 version: "3.9"
 services:
   multibot:
-    docker:
-    container_name: multibot
-     ports:
-      - 8080:8080
+    ports: - 8080:8080
     restart: unless-stopped
