@@ -1,7 +1,9 @@
-FROM missemily22/multifbot:latest
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+FROM anasty17/mltb:latest
 RUN mkdir /EvaMaria
 WORKDIR /EvaMaria
-COPY start.sh /start.sh
+RUN chmod /EvaMaria
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . .
 CMD ["/bin/bash", "/start.sh"]
+
