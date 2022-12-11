@@ -1,7 +1,11 @@
 services:
-  dockerfile:
+  multi-bot:
     public: true
     build: .
     resources:
       requests:
-        
+        cpu: 500m
+        memory: 1000Mi
+      limits:
+        cpu: 1000m
+        memory: 2000Mi
