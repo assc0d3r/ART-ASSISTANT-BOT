@@ -1,8 +1,13 @@
-build:
-  base:
-    context: .
-  api:
-    context: api
-  frontend:
-    context: frontend
-    dockerfile: 
+services:
+  multi-bot:
+    public: true
+    envFiles:
+       - config.env
+    build: .
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1000Mi
+      limits:
+        cpu: 1000m
+        memory: 2000Mi
