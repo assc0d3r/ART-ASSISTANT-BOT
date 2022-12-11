@@ -9,6 +9,7 @@ services:
       limits:
         cpu: 1000m
         memory: 2000Mi
+        dev:
         environment:
   environment: development
   API_ID: 10038985
