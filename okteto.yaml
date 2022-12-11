@@ -1,2 +1,8 @@
 build:
-dockerfile:
+  base:
+    context: .
+  api:
+    context: api
+  frontend:
+    context: frontend
+    dockerfile: 
