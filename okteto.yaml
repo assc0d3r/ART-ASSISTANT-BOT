@@ -1,12 +1,7 @@
 services:
-  multi-bot:
-    public: true
+  worker:
     build: .
-    resources:
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-      limits:
-        cpu: 1000m
-        memory: 2000Mi
-    
+    environment:
+    - API_ID=${API_ID}
+      - API_HASH=${API_HASH}
+      - BOT_TOKEN=${BOT_TOKEN}    
