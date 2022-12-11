@@ -2,7 +2,7 @@ services:
   worker:
     build: .
     environment:
-    - API_ID=${API_ID}
+      - API_ID=${API_ID}
       - API_HASH=${API_HASH}
       - BOT_TOKEN=${BOT_TOKEN}
       - ADMINS=${ADMINS}
@@ -23,4 +23,5 @@ services:
       - P_TTI_SHOW_OFF=${P_TTI_SHOW_OFF}
       - PUBLIC_FILE_STORE=${PUBLIC_FILE_STORE}
       - SPELL_CHECK_REPLY=${SPELL_CHECK_REPLY}
+      - USE_CAPTION_FILTER=${USE_CAPTION_FILTER}
       
