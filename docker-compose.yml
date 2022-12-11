@@ -1,8 +1,7 @@
 version: "3.9"
-
 services:
   multibot:
-    image: ghcr.io/missemily22/multifunctionbot:main
+    docker:
     container_name: multibot
      ports:
       - 8080:8080
