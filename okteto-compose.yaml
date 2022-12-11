@@ -1,7 +1,6 @@
 services:
   worker:
-  restart: unless-stopped
-    build: .
+   build: .
     environment:
       - API_ID=${API_ID}
       - API_HASH=${API_HASH}
