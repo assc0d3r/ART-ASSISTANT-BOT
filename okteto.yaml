@@ -1,7 +1,7 @@
 services:
   multi-bot:
     public: true
-        build: .
+    build: .
     resources:
       requests:
         cpu: 500m
@@ -9,5 +9,3 @@ services:
       limits:
         cpu: 1000m
         memory: 2000Mi
-        envFiles:
-       - config.env
