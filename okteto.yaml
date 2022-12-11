@@ -9,11 +9,4 @@ services:
       limits:
         cpu: 1000m
         memory: 2000Mi
-        dev:
-        environment:
-  API_ID: 10038985
-  BOT_TOKEN: 5471485554:AAHUF6PnKLW6lowwmBbt8eGjrKalV45p0pg
-  DATABASE_URI: mongodb+srv://coder:coder@cluster0.xy6nk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-  COLLECTION_NAME: ARTASSISTANT 
-  DATABASE_NAME: coder
-  API_HASH: b13a9434d5f59fdb592bf3cd0f457eff
+    
