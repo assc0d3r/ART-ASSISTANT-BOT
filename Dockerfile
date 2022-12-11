@@ -1,9 +1,12 @@
-FROM anasty17/mltb:latest
-RUN mkdir /EvaMaria
-WORKDIR /usr/src/app/EvaMaria
-RUN chmod 777 /usr/src/app/EvaMaria
-COPY requirements.txt .
-RUN pip3 install --no-cache-dir -r requirements.txt
-COPY . .
-CMD ["bash", "start.sh"]
+FROM python:3.8-slim-buster
 
+RUN apt update && apt upgrade -y
+RUN apt install git -y
+COPY requirements.txt /requirements.txt
+
+RUN cd /
+RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+RUN mkdir /EvaMaria
+WORKDIR /EvaMaria
+COPY start.sh /start.sh
+CMD ["/bin/bash", "/start.sh"]
