@@ -24,4 +24,6 @@ services:
       - PUBLIC_FILE_STORE=${PUBLIC_FILE_STORE}
       - SPELL_CHECK_REPLY=${SPELL_CHECK_REPLY}
       - USE_CAPTION_FILTER=${USE_CAPTION_FILTER}
+       ports: - 8080:8080
+       restart: unless-stopped
       
