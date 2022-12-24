@@ -6,7 +6,7 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-Run rmdir /EvaMaria
+#Run rmdir /EvaMaria
 RUN mkdir /EvaMaria
 WORKDIR /EvaMaria
 RUN chmod 777 /EvaMaria
